@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#footer a{
+    text-decoration:none;
+    color: white;
+}
+#footer a:link{
+    color: white;
+}
+
+#footer a:visited{
+    color: #e0f4f1;
+}
+#footer a:hover{
+    color: #48e4ca;
+    text-shadow: 2px 2px 3px black;
+}
+#footer a:active{
+    color: #e0f4f1;
+}
+
+#background{
+    /*float:left;*/
+    margin: 25px 10%;
+    align-content: center;
+    align-self: center;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    zoom: 1;
+    box-shadow: 2px 2px 24px rgb(80, 80, 80);
+    -webkit-box-shadow: 2px 2px 24px rgb(80,80,80);
+}
+
+#background #container #header{
+    align-content: center;
+}
+
+#background #container #header h1{
+    margin-bottom: 0;
+    background-color: #00a389;
+    /*background-color: #e0f4f1;*/
+    color:white;
+	text-shadow:2px 2px 4px #000000;
+    align-content: center;
+    text-align: center;
+    font-size: 46px;
+}
+
+#background #container #menu ul{
+    background-color: #e0f4f1;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#background #container #menu ul li{
+    float: left;
+    width: 25%;
+    list-style: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00a389;
+}
+
+#background #container #menu ul li a{
+    width: 100%;
+	display: inline-block;
+	text-align: center;
+	padding: 5px 0px;
+	text-decoration: none;
+	color: #00a389;
+	font-weight: bold;
+}
+
+#background #container #menu ul li a:hover{
+    background-color: #00a389;
+    color: white;
+}
+#background #container #menu ul li a:active{
+    background-color: #62c7a0;
+    color: #00a389;
+}
+
+#background #container #content{
+    background-color: #e0f4f1;
+    clear: both;
+    padding: 25px;
+}
+
+#background #container #content ul{
+    background-color: #e0f4f1;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#background #container #content ul li{
+    list-style: none;
+    color: #00a389;
+}
+
+#background #container #content ul li a{
+    width: 100%;
+	display: inline-block;
+	text-align: left;
+	padding: 5px 0px;
+    text-decoration: none;
+	color: black;
+}
+
+#background #container #content ul li a:hover{
+    background-color: #00a389;
+}
+
+#background #container #content ul li a:active{
+    background-color: #e0f4f1;
+}
+
+#background #container #content ul li a span{
+    float: right;
+}
+
+#background #container #content ul li span{
+
+}
+
+#background #container #footer{
+    background-color: #00a389;
+    clear:both;
+    text-align:center;
+    color: white;
+}
+
+#newForm input{
+    margin: 10px;
+}
