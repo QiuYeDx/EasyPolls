@@ -52,6 +52,23 @@
 <meta http-equiv="description" content="This is my page">
 
 </head>
+<script>
+	function CheckForm() {
+		let inputs = document.getElementsByName("op");
+		var flag = false;
+		for (var i = 0; i < inputs.length; i++) {
+			if (inputs [i].checked) {
+				flag = true
+			}
+		}
+		if (flag)
+			return true
+		else{
+			alert("您还未选择！")
+			return false
+		}
+	}
+</script>
 <link type="text/css" href="css/poll.css" rel="stylesheet" />
 <body style="background-color: rgb(197, 197, 197);text-align: center;">
 	<div id="background">
@@ -69,7 +86,7 @@
 				<hr style="border: 0.5px solid #00a389;" />
 			</div>
 			<div id="content" style="text-align:center;vertical-align:middle;">
-				<form action="submitOp.jsp" method="get">
+				<form action="submitOp.jsp" method="get" onSubmit="return CheckForm()">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
 						align="center">
 						<tr>
