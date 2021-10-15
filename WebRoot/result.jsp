@@ -37,17 +37,17 @@
 	int n4 = rs.getInt("n4");
 	int n5 = rs.getInt("n5");
 	int sum = n1+n2+n3+n4+n5;
-	int p1,p2,p3,p4,p5;
+	double p1,p2,p3,p4,p5;
 	DecimalFormat decFormat = new DecimalFormat("#%");
 	if(sum==0){
 		p1=p2=p3=p4=p5=0;
 	}
 	else{
-		p1=n1/sum;
-		p2=n2/sum;
-		p3=n3/sum;
-		p4=n4/sum;
-		p5=n5/sum;
+		p1=n1*1.0/sum;
+		p2=n2*1.0/sum;
+		p3=n3*1.0/sum;
+		p4=n4*1.0/sum;
+		p5=n5*1.0/sum;
 	}
 %>
 <!DOCTYPE html>
