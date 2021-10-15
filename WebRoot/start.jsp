@@ -22,12 +22,14 @@
         </head>
         <script>
             function CheckForm(obj) {
-                for (i = 0; i < 4; i++) {
+                for (i = 1; i <= 4; i++) {
                     if ((obj.elements[i].value == "")) {
                         alert("您有必填项还未填写！")
                         return false
                     }
                 }
+                if(obj.elements[7].value!="" && obj.elements[5].value=="" || obj.elements[7].value!="" && obj.elements[6].value=="" ||obj.elements[6].value!=""&&obj.elements[5].value=="")
+                    return flase
                 return true
             }
         </script>
