@@ -40,12 +40,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/easyPolls", "root", "20011216");
        		Statement stmt = conn.createStatement ();
-       		ResultSet rs = stmt.executeQuery("select * from polls;");
+       		ResultSet rs = stmt.executeQuery("select * from polls order by 1 desc;");
        		%>
                 <ul>               
                 <% while(rs.next()){ %>
                 	<li>
-                        <a href="menu.jsp"> <%=rs.getString("title") %> <span><%=rs.getDate("time")%></span></a>
+                        <a href="poll.jsp?id=<%=rs.getInt("id") %>"> <%=rs.getString("title") %> <span><%=rs.getDate("time")%></span></a>
                     </li>
                 <%} %>
                 <%rs.close(); stmt.close(); conn.close();  %>

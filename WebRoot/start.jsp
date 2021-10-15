@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
                 <hr style="border: 0.5px solid #00a389;" />
             </div>
-            <div id="content">
+            <div id="contents">
                 <form id="newForm" action="submit.jsp" method="get">
                     <fieldset>
                         <legend>发起新的问卷</legend>

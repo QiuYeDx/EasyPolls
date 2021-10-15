@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>EasyPolls - 提交成功</title>
+    <title>EasyPolls - 投票成功</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -35,22 +35,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <% 
             request.setCharacterEncoding("UTF-8");
-            String title = request.getParameter("title");
-            String content = request.getParameter("content");
-            String op1 = request.getParameter("op1");
-            String op2 = request.getParameter("op2");
-            String op3 = request.getParameter("op3");
-            String op4 = request.getParameter("op4");
-            String op5 = request.getParameter("op5");
+            String id = request.getParameter("id");
+            String op = request.getParameter("op");
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/easyPolls", "root", "20011216");
        		Statement stmt = conn.createStatement ();
-       		stmt.executeUpdate("INSERT INTO polls (title, time, content, op1, op2, op3, op4, op5, n1, n2, n3, n4, n5) VALUES ('"+title+"',CURRENT_DATE(),'"+content+"','"+op1+"','"+op2+"','"+op3+"','"+op4+"','"+op5+"',0,0,0,0,0);");
+       		stmt.executeUpdate("UPDATE polls SET "+op+"="+op+"+1 WHERE id = "+id+";");
        		%>
             <div id="content">
-                「 提 交 成 功 」<br/>
+                「 投 票 成 功 」<br/>
                 <%stmt.close(); conn.close();  %>
-                <a href="menu.jsp" id="a_submit">点击查看最新目录</a>
+                <a href="result.jsp?id=<%=id %>" id="a_submit">点击查看问卷结果</a>
             </div>
             
             <div id="footer"> 

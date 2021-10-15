@@ -36,9 +36,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div id="content">
                 「EasyPolls」是一个匿名的网页投票、问卷系统，旨在提供简单、高效且免费的问卷收集服务。
                 <div id="ad">
-                    <div><img src="src/menu.png" id="ad_menu"/><br/>目录页面 </div>
+                    <div><img src="src/menu.png" id="ad_menu"/><br/>目录页面</div>
                     <div><img src="src/start.png" id="ad_start"/><br/>发起投票</div>
-                    <div><img src="src/about.png" id="ad_about"/><br/>关于页面</div>
+                    <div><img src="src/poll.png" id="ad_poll"/><br/>投票界面</div>
+                    <div><img src="src/result.png" id="ad_result"/><br/>查询结果</div>
                 </div>
             </div>
             
