@@ -1,3 +1,4 @@
+@CHARSET "UTF-8";
 *{
     margin: 0;
     padding: 0;
@@ -75,8 +76,8 @@
 }
 
 #background #container #menu ul li a:hover{
-    animation:mymove 0.3s both;
-	-webkit-animation:mymove 0.3s both; /* Safari and Chrome */
+    animation:mymove2 0.3s both;
+	-webkit-animation:mymove2 0.3s both; /* Safari and Chrome */
 }
 #background #container #menu ul li a:active{
     background-color: #62c7a0;
@@ -89,40 +90,24 @@
     padding: 25px;
 }
 
-#background #container #contents ul{
-    background-color: #e0f4f1;
-    overflow: hidden;
-    zoom: 1;
+#contents a{
+    line-height: 40px;
+    text-decoration:none;
+    color: white;
+}
+#contents a:link{
+    color: white;
 }
 
-#background #container #contents ul li{
-    list-style: none;
-    color: #00a389;
+#contents a:visited{
+    color: #e0f4f1;
 }
-
-#background #container #contents ul li a{
-    width: 100%;
-	display: inline-block;
-	text-align: left;
-	padding: 5px 0px;
-    text-decoration: none;
-	color: black;
+#contents a:hover{
+    color: #48e4ca;
+    text-shadow: 2px 2px 3px black;
 }
-
-#background #container #contents ul li a:hover{
-    background-color: #00a389;
-}
-
-#background #container #contents ul li a:active{
-    background-color: #e0f4f1;
-}
-
-#background #container #contents ul li a span{
-    float: right;
-}
-
-#background #container #contents ul li span{
-
+#contents a:active{
+    color: #e0f4f1;
 }
 
 #background #container #footer{
@@ -136,7 +121,63 @@
     margin: 10px;
 }
 
-@keyframes mymove {
+#left{
+    display: inline-block;
+    border-radius: 20px 0 0 20px;
+    width:80px;
+	height:40px;
+	background:#00a389;
+	position:relative;
+}
+
+#right{
+    border-radius: 0 20px 20px 0;
+    display: inline-block;
+    width:80px;
+	height:40px;
+	background:#00a389;
+	position:relative;
+}
+
+#left:hover{
+    animation:mymove 0.8s both;
+	-webkit-animation:mymove 0.8s both; /* Safari and Chrome */
+}
+
+#right:hover{
+    animation:mymove 0.8s both;
+	-webkit-animation:mymove 0.8s both; /* Safari and Chrome */
+}
+
+@keyframes mymove
+{
+	from {
+        width:80px;
+        height:40px;
+        background:#00a389;
+    }
+	to {
+        width:130px;
+        height:40px;
+        background:#00a3882d;
+    }
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+	from {
+        width:80px;
+        height:40px;
+        background:#00a389;
+    }
+	to {
+        width:130px;
+        height:40px;
+        background:#00a3882d;
+    }
+}
+
+@keyframes mymove2 {
     from{
         background-color: #e0f4f1;
         color: #00a389;
@@ -147,7 +188,7 @@
     }
 }
 
-@-webkit-keyframes mymove{
+@-webkit-keyframes mymove2{
     from{
         background-color: #e0f4f1;
         color: #00a389;

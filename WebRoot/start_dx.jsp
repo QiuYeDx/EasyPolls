@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <hr style="border: 0.5px solid #00a389;" />
             </div>
             <div id="contents">
-                <form id="newForm" action="submit.jsp" method="get" onSubmit="return CheckForm(this)">
+                <form id="newForm" action="submit_dx.jsp" method="get" onSubmit="return CheckForm(this)">
                     <fieldset>
                         <legend>发起新的问卷</legend>
                         <label for="title">问卷标题:</label><input type="text" name="title" id="title" /><br/>

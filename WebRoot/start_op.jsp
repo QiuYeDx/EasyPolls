@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" import="java.sql.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,19 +11,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPolls - 目录</title>
+    <title>EasyPolls - 开始</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
+	<link type="text/css" href="css/start_op.css" rel="stylesheet" /> 
 
   </head>
-  <link type="text/css" href="css/menu.css" rel="stylesheet" /> 
+
   <body style="background-color: rgb(197, 197, 197);text-align: center;">
-    <div id="background">
+   <div id="background">
         <div id="container">
             <div id="header">
                 <h1>EasyPolls</h1>
@@ -37,21 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
                 <hr style="border: 0.5px solid #00a389;" />
             </div>
-            <div id="content">
-            <% 
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/easyPolls", "root", "20011216");
-       		Statement stmt = conn.createStatement ();
-       		ResultSet rs = stmt.executeQuery("select * from polls order by 1 desc;");
-       		%>
-                <ul>               
-                <% while(rs.next()){ %>
-                	<li>
-                        <a href="poll.jsp?id=<%=rs.getInt("id") %>"> <%=rs.getString("title") %> <span><%=rs.getDate("time")%></span></a>
-                    </li>
-                <%} %>
-                <%rs.close(); stmt.close(); conn.close();  %>
-                </ul>
+            <div id="contents">
+            	<a href="start.jsp"> <div id="left"> 单选 </div> </a>
+                <a href="start_dx.jsp"> <div id="right"> 多选 </div> </a>
             </div>
             
             <div id="footer"> 

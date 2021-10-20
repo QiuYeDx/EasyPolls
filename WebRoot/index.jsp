@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul>
                     <li><a href="#">首 页</a></li>
                     <li><a href="menu.jsp">目 录</a></li>
-                    <li><a href="start.jsp">开 始</a></li>
+                    <li><a href="start_op.jsp">开 始</a></li>
                     <li><a href="about.html">关 于</a></li>
                 </ul>
                 <hr style="border: 0.5px solid #00a389;" />

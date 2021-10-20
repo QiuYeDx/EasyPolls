@@ -36,6 +36,7 @@
 	int n3 = rs.getInt("n3");
 	int n4 = rs.getInt("n4");
 	int n5 = rs.getInt("n5");
+	int yn = rs.getInt("yn");
 %>
 <!DOCTYPE html>
 <html>
@@ -54,7 +55,7 @@
 </head>
 <script>
 	function CheckForm() {
-		let inputs = document.getElementsByName("op");
+		let inputs = document.getElementsByName("<%if(yn==1) {%>op<%}else{ %>ops<%}%>");
 		var flag = false;
 		for (var i = 0; i < inputs.length; i++) {
 			if (inputs [i].checked) {
@@ -80,7 +81,7 @@
 				<ul>
 					<li><a href="#">首 页</a></li>
 					<li><a href="menu.jsp">目 录</a></li>
-					<li><a href="start.jsp">开 始</a></li>
+					<li><a href="start_op.jsp">开 始</a></li>
 					<li><a href="about.html">关 于</a></li>
 				</ul>
 				<hr style="border: 0.5px solid #00a389;" />
@@ -106,37 +107,38 @@
 
 						<tr>
 							<td width="80%" class="btbg1 font-center"><%=op1%></td>
-							<td width="20%" class="btbg2" align="center"><input type="radio" name="op" value="n1" /></td>
+							<td width="20%" class="btbg2" align="center"><%if(yn==1){ %><input type="radio" name="op" value="n1" /><%} else{%><input type="checkbox" name="ops" value="n1" /><%} %></td>
 						</tr>
 						<tr>
 							<td width="80%" class="btbg1 font-center"><%=op2%></td>
-							<td width="20%" class="btbg2" align="center"><input type="radio" name="op" value="n2" /></td>
+							<td width="20%" class="btbg2" align="center"><%if(yn==1){ %><input type="radio" name="op" value="n2" /><%} else{%><input type="checkbox" name="ops" value="n2" /><%} %></td>
 						</tr>
 						<%if(op3.length()!=0) {%>
 						<tr>
 							<td width="80%" class="btbg1 font-center"><%=op3%></td>
-							<td width="20%" class="btbg2" align="center"><input type="radio" name="op" value="n3" /></td>
+							<td width="20%" class="btbg2" align="center"><%if(yn==1){ %><input type="radio" name="op" value="n3" /><%} else{%><input type="checkbox" name="ops" value="n3" /><%} %></td>
 						</tr>
 						<%} %>
 						<%if(op4.length()!=0) {%>
 						<tr>
 							<td width="80%" class="btbg1 font-center"><%=op4%></td>
-							<td width="20%" class="btbg2" align="center"><input type="radio" name="op" value="n4" /></td>
+							<td width="20%" class="btbg2" align="center"><%if(yn==1){ %><input type="radio" name="op" value="n4" /><%} else{%><input type="checkbox" name="ops" value="n4" /><%} %></td>
 						</tr>
 						<%} %>
 						<%if(op5.length()!=0) {%>
 						<tr>
 							<td width="80%" class="btbg1 font-center"><%=op5%></td>
-							<td width="20%" class="btbg2" align="center"><input type="radio" name="op" value="n5" /></td>
+							<td width="20%" class="btbg2" align="center"><%if(yn==1){ %><input type="radio" name="op" value="n5" /><%} else{%><input type="checkbox" name="ops" value="n5" /><%} %></td>
 						</tr>
 						<%} %>
 					</table>
 					<br/>
 					<input type="text" value="<%=id %>" name="id" style="display:none"/>
+					<input type="text" value="<%=yn %>" name="yn" style="display:none"/>
 					<input type="submit" value="提交选择"/>
 				</form>
 				<br/>
-				<a href="result.jsp?id=<%=id %>" id="a_submit">点击查看问卷结果</a>
+				<a href="result.jsp?id=<%=id%>" id="a_submit">点击查看问卷结果</a>
 			</div>
 
 			<div id="footer">

@@ -76,8 +76,8 @@
 }
 
 #background #container #menu ul li a:hover{
-    background-color: #00a389;
-    color: white;
+    animation:mymove 0.3s both;
+	-webkit-animation:mymove 0.3s both; /* Safari and Chrome */
     /*border-radius: 0px 0px 18px 18px;*/
 }
 #background #container #menu ul li a:active{
@@ -174,4 +174,26 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 	line-height: 20px;
+}
+
+@keyframes mymove {
+    from{
+        background-color: #e0f4f1;
+        color: #00a389;
+    }
+    to{
+        background-color: #00a389;
+        color: white;
+    }
+}
+
+@-webkit-keyframes mymove{
+    from{
+        background-color: #e0f4f1;
+        color: #00a389;
+    }
+    to{
+        background-color: #00a389;
+        color: white;
+    }
 }

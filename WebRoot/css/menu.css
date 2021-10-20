@@ -75,8 +75,8 @@
 }
 
 #background #container #menu ul li a:hover{
-    background-color: #00a389;
-    color: white;
+    animation:mymove 0.3s both;
+	-webkit-animation:mymove 0.3s both; /* Safari and Chrome */
 }
 #background #container #menu ul li a:active{
     background-color: #62c7a0;
@@ -110,8 +110,8 @@
 }
 
 #background #container #content ul li a:hover{
-    background-color: #00a389;
-}
+    animation:mymove2 0.15s both;
+	-webkit-animation:mymove2 0.15s both; /* Safari and Chrome */}
 
 #background #container #content ul li a:active{
     background-color: #e0f4f1;
@@ -130,4 +130,44 @@
     clear:both;
     text-align:center;
     color: white;
+}
+
+@keyframes mymove {
+    from{
+        background-color: #e0f4f1;
+        color: #00a389;
+    }
+    to{
+        background-color: #00a389;
+        color: white;
+    }
+}
+
+@-webkit-keyframes mymove{
+    from{
+        background-color: #e0f4f1;
+        color: #00a389;
+    }
+    to{
+        background-color: #00a389;
+        color: white;
+    }
+}
+
+@keyframes mymove2 {
+    from{
+        background-color: #e0f4f1;
+    }
+    to{
+        background-color: #00a389;
+    }
+}
+
+@-webkit-keyframes mymove2{
+    from{
+        background-color: #e0f4f1;
+    }
+    to{
+        background-color: #00a389;
+    }
 }

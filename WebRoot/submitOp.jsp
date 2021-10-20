@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul>
                     <li><a href="#">首 页</a></li>
                     <li><a href="menu.jsp">目 录</a></li>
-                    <li><a href="start.jsp">开 始</a></li>
+                    <li><a href="start_op.jsp">开 始</a></li>
                     <li><a href="about.html">关 于</a></li>
                 </ul>
                 <hr style="border: 0.5px solid #00a389;" />
@@ -38,11 +38,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <% 
             request.setCharacterEncoding("UTF-8");
             String id = request.getParameter("id");
-            String op = request.getParameter("op");
+            String op="";
+            String [] ops={};
+			String yn = request.getParameter("yn");
+			if(yn.equals("1"))
+				op = request.getParameter("op");
+			else
+				ops = request.getParameterValues("ops");
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/easyPolls", "root", "20011216");
        		Statement stmt = conn.createStatement ();
-       		stmt.executeUpdate("UPDATE polls SET "+op+"="+op+"+1 WHERE id = "+id+";");
+       		if(yn.equals("1"))
+       			stmt.executeUpdate("UPDATE polls SET "+op+"="+op+"+1 WHERE id = "+id+";");
+       		else
+       			for(int i=0;i<ops.length;i++){
+       				stmt.executeUpdate("UPDATE polls SET "+ops[i]+"="+ops[i]+"+1 WHERE id = "+id+";");
+       			}
        		%>
             <div id="content">
                 「 投 票 成 功 」<br/>
