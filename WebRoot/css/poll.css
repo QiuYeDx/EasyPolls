@@ -118,6 +118,26 @@
     color: #00a389;
 }
 
+#a_makeExcel{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 0px;
+    text-decoration: none;
+    color: #00a389;
+    font-weight: bold;
+}
+
+#a_makeExcel:hover{
+    background-color: #00a389;
+    color: white;
+    /*border-radius: 0px 0px 18px 18px;*/
+}
+#a_makeExcel:active{
+    background-color: #62c7a0;
+    color: #00a389;
+}
+
 #ad{
     overflow: hidden;
     zoom: 1;

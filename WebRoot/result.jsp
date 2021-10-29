@@ -65,6 +65,25 @@
 <meta http-equiv="description" content="This is my page">
 
 </head>
+<script type="text/javascript">
+	function exportExcel(){
+		window.open('makeExcel.jsp?exportToExcel=YES&id=<%=id%>');
+	}
+</script>
+<xml>
+	<x:ExcelWorkbook>
+		<x:ExcelWorksheets>
+			<x:ExcelWorksheet>
+				<!-- <x:Name>工作表标题</x:Name>-->
+				<x:WorksheetOptions>
+					<x:Print>
+						<x:ValidPrinterInfo />
+					</x:Print>
+				</x:WorksheetOptions>
+			</x:ExcelWorksheet>
+		</x:ExcelWorksheets>
+	</x:ExcelWorkbook>
+</xml>
 <link type="text/css" href="css/poll.css" rel="stylesheet" />
 <body style="background-color: rgb(197, 197, 197);text-align: center;">
 	<div id="background">
@@ -134,6 +153,7 @@
 					</table>
 					<br/>
 				<br/>
+				<a href="javascript:exportExcel();" id="a_makeExcel">导出为Excel</a><br/>
 				<a href="menu.jsp" id="a_submit">返回目录</a>
 			</div>
 
