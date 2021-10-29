@@ -14,7 +14,7 @@
 + 改进前端特效;
 + ......
 
-##Deemo: [EasyPolls](http://39.106.58.123:8080/easypolls)
+## Deemo: [EasyPolls](http://39.106.58.123:8080/easypolls)
 ![投票页面](https://github.com/QiuYeDx/EasyPolls/blob/master/WebRoot/src/poll.png)
 ![目录页面](https://github.com/QiuYeDx/EasyPolls/blob/master/WebRoot/src/menu.png)
 ![结果页面](https://github.com/QiuYeDx/EasyPolls/blob/master/WebRoot/src/result.png)
