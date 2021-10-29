@@ -17,6 +17,19 @@
 <%
 	String id = request.getParameter("id");
 %>
+
+<%
+	//首次访问本站点的识别+防止刷票
+	if(session.getAttribute("flag")==null){
+		session.setAttribute("flag", 0);
+		Map temp_map = new HashMap();
+		session.setAttribute("map", temp_map);
+	}
+	Map temp_map = (Map)session.getAttribute("map");
+	if(temp_map.get(id) == "Y")
+		response.sendRedirect("result.jsp?id="+id);
+%>
+
 <%
 	int i = Integer.parseInt(id);
 	while (i != 0) {

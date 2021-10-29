@@ -49,6 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        		Statement stmt = conn.createStatement ();
        		stmt.executeUpdate("INSERT INTO polls (title, time, content, op1, op2, op3, op4, op5, n1, n2, n3, n4, n5, yn) VALUES ('"+title+"',CURRENT_DATE(),'"+content+"','"+op1+"','"+op2+"','"+op3+"','"+op4+"','"+op5+"',0,0,0,0,0,0);");
        		%>
+
             <div id="content">
                 「 提 交 成 功 」<br/>
                 <%stmt.close(); conn.close();  %>

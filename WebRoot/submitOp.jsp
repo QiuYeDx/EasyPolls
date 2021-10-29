@@ -38,6 +38,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <% 
             request.setCharacterEncoding("UTF-8");
             String id = request.getParameter("id");
+
+            //防止刷票
+            Map temp_map = (Map)session.getAttribute("map");
+            Boolean flag = temp_map.get(id) == "Y";
+            if(!flag) {
+                temp_map.put(id, "Y");
+                session.setAttribute("map", temp_map);
+            }
+
+
             String op="";
             String [] ops={};
 			String yn = request.getParameter("yn");
@@ -48,15 +58,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/easyPolls", "root", "20011216");
        		Statement stmt = conn.createStatement ();
-       		if(yn.equals("1"))
-       			stmt.executeUpdate("UPDATE polls SET "+op+"="+op+"+1 WHERE id = "+id+";");
-       		else
-       			for(int i=0;i<ops.length;i++){
-       				stmt.executeUpdate("UPDATE polls SET "+ops[i]+"="+ops[i]+"+1 WHERE id = "+id+";");
-       			}
+
+       		//防止刷票
+       		if(!flag)
+       		    if(yn.equals("1"))
+       			    stmt.executeUpdate("UPDATE polls SET "+op+"="+op+"+1 WHERE id = "+id+";");
+       		    else
+       			    for(int i=0;i<ops.length;i++){
+       				    stmt.executeUpdate("UPDATE polls SET "+ops[i]+"="+ops[i]+"+1 WHERE id = "+id+";");
+       			    }
        		%>
+
+
             <div id="content">
-                「 投 票 成 功 」<br/>
+                <%if(!flag){%>「 投 票 成 功 」<br/><%}%>
+                <%if(flag){%>「 您已经投过票了，不能重复投票！ 」<br/><%}%>
                 <%stmt.close(); conn.close();  %>
                 <a href="result.jsp?id=<%=id %>" id="a_submit">点击查看问卷结果</a>
             </div>
